@@ -3,7 +3,6 @@ package com.qaprosoft.demo.gui.vk.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-import com.qaprosoft.carina.core.foundation.utils.R;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 
 public class EditPage extends BasePage {
@@ -16,11 +15,13 @@ public class EditPage extends BasePage {
 	
 	public EditPage(WebDriver driver) {
 		super(driver);
-		setPageURL(R.TESTDATA.get("url_edit_page"));
+		//setPageURL(R.TESTDATA.get("url_edit_page"));
+		setPageURL(URL_EDIT_PAGE);
 	}
 	
 	public EditContactsPage openEditContactsPage(){
-		editContactsLink.click();
+		assertElementPresent(editContactsLink);
+		click(editContactsLink);
 		return new EditContactsPage(driver);
 	}
 

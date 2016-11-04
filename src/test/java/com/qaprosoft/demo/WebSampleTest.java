@@ -39,7 +39,7 @@ public class WebSampleTest extends UITest
 {
 	@Test(dataProvider = "SingleDataProvider", description = "JIRA#AUTO-10001")
 	@MethodOwner(owner = "brutskov")
-	@XlsDataSourceParameters(path = "xls/samples.xlsx", sheet = "GSMArena", dsUid = "TUID", dsArgs = "brand, model, display, camera, ram, battery")
+	@XlsDataSourceParameters(path = "xls/demo.xlsx", sheet = "GSMArena", dsUid = "TUID", dsArgs = "brand, model, display, camera, ram, battery")
 	public void testModelSpecs(String brand, String model, String display, String camera, String ram, String battery)
 	{
 		// Open GSM Arena home page and verify page is opened
@@ -47,6 +47,7 @@ public class WebSampleTest extends UITest
 		homePage.open();
 		Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
 		// Select phone brand
+		
 		BrandModelsPage productsPage = homePage.selectBrand(brand);
 		// Select phone model
 		ModelInfoPage productInfoPage = productsPage.selectModel(model);

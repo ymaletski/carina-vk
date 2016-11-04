@@ -21,22 +21,25 @@ public class SideProfileBar extends AbstractUIObject {
 	@FindBy(id = "l_fr")
 	private ExtendedWebElement friendsLink;
 
-	public SideProfileBar(WebDriver driver, SearchContext searchContext) {
+	public SideProfileBar(WebDriver driver, SearchContext searchContext){
 		super(driver, searchContext);
 	}
 	
 	public MyProfilePage openMyProfilePage(){
-		myPageLink.click();
+		assertElementPresent(myPageLink);
+		click(myPageLink);
 		return new MyProfilePage(driver); 
 	}
 	
 	public NewsPage openNewsPage(){
-		newsLink.click();
+		assertElementPresent(newsLink);
+		click(newsLink);
 		return new NewsPage(driver); 
 	}
 	
 	public FriendsPage openFriendsPage(){
-		friendsLink.click();
+		assertElementPresent(friendsLink);
+		click(friendsLink);
 		return new FriendsPage(driver); 
 	}
 

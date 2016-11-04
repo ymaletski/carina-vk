@@ -7,8 +7,9 @@ import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebEleme
 import com.qaprosoft.carina.core.gui.AbstractPage;
 import com.qaprosoft.demo.gui.vk.components.ProfileMenu;
 import com.qaprosoft.demo.gui.vk.components.SideProfileBar;
+import com.qaprosoft.demo.testdata.TestData;
 
-public class BasePage extends AbstractPage {
+public class BasePage extends AbstractPage implements TestData {
 	
 	@FindBy(id = "top_profile_link")
 	private ExtendedWebElement profileLink;
@@ -23,12 +24,13 @@ public class BasePage extends AbstractPage {
 		super(driver);
 	}
 	
-	public ProfileMenu getProfileMenu(){
+	public ProfileMenu getProfileMenu() {
+		assertElementPresent(profileLink);
 		click(profileLink);
 		return profileMenu;
 	}
 	
-	public SideProfileBar getSideProfileBar(){
+	public SideProfileBar getSideProfileBar() {
 		return sideProfileBar;
 	}
 

@@ -24,20 +24,21 @@ public class ProfileMenu extends AbstractUIObject {
 		super(driver, searchContext);
 	}
 	
-	public MyProfilePage openMyProfilePage()
-	{
-		myProfileLink.click();
+	public MyProfilePage openMyProfilePage(){
+		assertElementPresent(myProfileLink);
+		click(myProfileLink);
 		return new MyProfilePage(driver);
 	}
 	
-	public EditPage openEditPage()
-	{
-		editLink.click();
+	public EditPage openEditPage(){
+		assertElementPresent(editLink);
+		click(editLink);
 		return new EditPage(driver);
 	}
 	
 	public void logOut(){
-		logOutLink.click();
+		assertElementPresent(logOutLink);
+		click(logOutLink);
 	}
 
 }

@@ -2,9 +2,14 @@
 
 <suite verbose="1" name="Carina Demo Tests - Web tests" skipfailedinvocationcounts="false" junit="false" parallel="tests" data-provider-thread-count="50" annotations="JDK">
 
-	<test name="GSM Arena web tests">
+	<test name="Vk Person Test">
+	<parameter name="{ds_custom_provider}" value="true" />
 		<classes>
-			<class name="com.qaprosoft.demo.WebSampleTest" />
+			<class name="com.qaprosoft.demo.VkTest">
+				<methods>
+					<include name="testValidPersons" />
+				</methods>
+			</class>
 		</classes>
 	</test>
 

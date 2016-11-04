@@ -4,6 +4,7 @@
 *.jar
 *.war
 *.ear
+/.logs
 /.project
 /.settings
 /reports

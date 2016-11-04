@@ -1,6 +1,5 @@
 package com.qaprosoft.demo.gui.vk.components;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.SearchContext;
@@ -18,13 +17,8 @@ public class FriendsList extends AbstractUIObject {
 		super(driver, searchContext);
 	}
 	
-	public List<String> getListOfFriends(){
-		List<String> names = new ArrayList<String>();
-		for (ExtendedWebElement element : nameLabels){
-			assertElementPresent(element);
-			names.add(element.getText());
-		}
-		return names;
+	public List<ExtendedWebElement> getNameLabels(){
+		return nameLabels;
 	}
 
 }
