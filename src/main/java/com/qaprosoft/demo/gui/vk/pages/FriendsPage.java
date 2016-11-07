@@ -3,6 +3,7 @@ package com.qaprosoft.demo.gui.vk.pages;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
@@ -48,13 +49,22 @@ public class FriendsPage extends BasePage {
 			String[] sub = nameLabel.getText().split(" ");
 			person.setName(sub[0]);
 			person.setSurname(sub[1]);
+			openPersonPage(nameLabel);
+			driver.navigate().back();
 			persons.add(person);
 		}
 		return persons;
 	}
 	
-	public PersonPage openPersonPage(){
+	public PersonPage openPersonPage(ExtendedWebElement nameLabel){
+		click(nameLabel);
 		return new PersonPage(driver);
+	}
+	
+	public void scrollDown(){
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		//jse.executeScript("scroll(0, 250);");
+		jse.executeScript("scrollBy(0,500)");
 	}
 	
 }

@@ -25,6 +25,7 @@
   <Loggers>
     <Root level="all">
       <AppenderRef ref="Console"/>
+      <AppenderRef ref="LogFile"/>
     </Root>
     <!--<Logger name="com.roxoft.io.InitialSystemPrinter" level="info" additivity="false">
       <AppenderRef ref="LogFile"/>
